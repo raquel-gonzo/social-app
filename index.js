@@ -2,6 +2,7 @@ const { ApolloServer } = require("apollo-server");
 const gql = require("graphql-tag");
 const mongoose = require('mongoose');
 
+const typeDefs = require('./graphql/typeDefs');
 //import the post & schema
 const Post = require('./models/Post');
 const User = require('./models/User');
@@ -9,18 +10,6 @@ const User = require('./models/User');
 //import the connection string
 const { MONGODB_CLUSTER_STRING } = require('./config.js')
 
-// GraphQL types
-const typeDefs = `
-    type Post{
-        id: ID!
-        body: String!
-        createdAt: String!
-        username: String!
-    }
-    type Query{
-        getPosts: [Post]
-    }
-`
 
 // for each query, mutation, or subscription, this contains the corresponding resolver. 
 const resolvers = {

@@ -18,7 +18,7 @@ const server = new ApolloServer({
 mongoose.connect( MONGODB_CLUSTER_STRING, { useNewUrlParser: true }, { useUnifiedTopology: true } )
     .then(() => {
         console.log('MongoDB connected.')
-        return server.listen({ port: 3000})
+        return server.listen({ port: 3000 })
     })  // start the server. returns a promise.
     .then(res => {
         console.log(`Server running at ${res.url}`)

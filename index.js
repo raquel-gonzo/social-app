@@ -2,7 +2,7 @@ const { ApolloServer } = require("apollo-server");
 const mongoose = require('mongoose');
 
 const typeDefs = require('./graphql/typeDefs');
-const resolvers = require('./graphql/resolvers');
+const resolvers = require('./graphql/resolvers/resolver.index');
 
 //import the connection string
 const { MONGODB_CLUSTER_STRING } = require('./config.js')
